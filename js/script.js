@@ -7,3 +7,4 @@ let transport = 200;
 let other = 500;
 /* Remainig balance is equal with montly income minus-rent */
 console.log(`Remainig balance = ${monthlyIncome-rent}`);
+console.log(`Total expense= ${rent+food+transport+other}`);
