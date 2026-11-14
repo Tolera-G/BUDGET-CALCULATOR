@@ -13,3 +13,6 @@ const other=Number(other1);
 const totalExpense=rent+food+transport+other;
 const remainingBalance = montlyIncome-totalExpense;
 
+console.log(`Total expenses = ${totalExpense} (${typeof totalExpense})`);
+console.log(`Remaining balance = ${remainingBalance} (${typeof remainingBalance})`);
+
