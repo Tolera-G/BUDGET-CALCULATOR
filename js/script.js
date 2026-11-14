@@ -10,3 +10,6 @@ const food=Number(food1);
 const transport=Number(transport1);
 const other=Number(other1);
 
+const totalExpense=rent+food+transport+other;
+const remainingBalance = montlyIncome-totalExpense;
+
