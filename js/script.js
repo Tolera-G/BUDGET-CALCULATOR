@@ -5,4 +5,8 @@ const transport1="600";
 const other1="100";
 
 const montlyIncome= Number(income1);
+const rent=Number(rent1);
+const food=Number(food1);
+const transport=Number(transport1);
+const other=Number(other1);
 
