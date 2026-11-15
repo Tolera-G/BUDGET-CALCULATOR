@@ -1,8 +1,8 @@
 const income1="5000";
-const rent1="800";
-const food1="400";
-const transport1="600";
-const other1="100";
+const rent1="1500";
+const food1="1200";
+const transport1="400";
+const other1="300";
 
 //Validation
 if (
@@ -18,18 +18,18 @@ other1.trim()  === "" || Number.isNaN(Number(other1))
 console.log("please enter a valid number for all fields")
 }else{
 
-const montlyIncome= Number(income1);
+const monthlyIncome= Number(income1);
 const rent=Number(rent1);
 const food=Number(food1);
 const transport=Number(transport1);
 const other=Number(other1);
 
 const totalExpense=rent+food+transport+other;
-const remainingBalance = montlyIncome-totalExpense;
+const remainingBalance = monthlyIncome-totalExpense;
 
 console.log(`Total expenses = ${totalExpense} (${typeof totalExpense})`);
 console.log(`Remaining balance = ${remainingBalance} (${typeof remainingBalance})`);
-}
+
 //Status
 let status= "";
 if (remainingBalance>0) {
@@ -44,5 +44,10 @@ else{
 
 
 console.log(status);
+
+console.log(`Total expenses = ${totalExpense} (${typeof totalExpense})`);
+console.log(`Remaining balance = ${remainingBalance} (${typeof remainingBalance})`);
+}
+
 
 
