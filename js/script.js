@@ -6,12 +6,12 @@ const other1="300";
 
 //Validation
 if (
-income1.trim() === "" || Number.isNaN(Number(income1)) ||
-rent1.trim()  === "" || Number.isNaN(Number(rent1))||
-food1.trim() === "" || Number.isNaN(Number(food1)) ||
-transport1.trim() === "" || Number.isNaN(Number(transport1))||
-income1.trim() === "" || Number.isNaN(Number(income1)) ||
-other1.trim()  === "" || Number.isNaN(Number(other1))
+income1.trim() === "" || Number.isNaN(Number(income1)) ||Number(income1) < 0||
+rent1.trim()  === "" || Number.isNaN(Number(rent1))||Number(rent1) < 0||
+food1.trim() === "" || Number.isNaN(Number(food1)) ||Number(food1) < 0||
+transport1.trim() === "" || Number.isNaN(Number(transport1))||Number(transport1) < 0||
+income1.trim() === "" || Number.isNaN(Number(income1)) ||Number(income1) < 0||
+other1.trim()  === "" || Number.isNaN(Number(other1))||Number(other1) < 0
 )
 
 {
