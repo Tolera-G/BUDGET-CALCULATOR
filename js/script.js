@@ -28,4 +28,15 @@ const remainingBalance = montlyIncome-totalExpense;
 console.log(`Total expenses = ${totalExpense} (${typeof totalExpense})`);
 console.log(`Remaining balance = ${remainingBalance} (${typeof remainingBalance})`);
 }
-//validation
+//Status
+let status= "";
+if (remainingBalance>0) {
+    status=`Withing budget ${remainingBalance} left`;    
+}else if (remainingBalance===0) {
+    status="Budget fully used (0 left)";
+}esle {
+    status="Over budget";
+}
+
+console.log(status);
+
