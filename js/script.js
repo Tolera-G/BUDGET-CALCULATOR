@@ -53,5 +53,18 @@ function calculateTotal(rent, food, transport, other){
 function calculateBalance (monthlyIncome, totalExpense){
     return totalExpense-monthlyIncome;
 }
+function getStatus(remainingBalance){
+    let status="";
+    if (remainingBalance>0){
+        status="within budget";
+    } else if (remainingBalance===0) {
+        status="Budget fully used";
+        
+    } else {
+        status="Over budget";
+        
+    }
+    return status
 
+}
 
