@@ -45,9 +45,10 @@ else{
 
 console.log(status);
 
-console.log(`Total expenses = ${totalExpense} (${typeof totalExpense})`);
-console.log(`Remaining balance = ${remainingBalance} (${typeof remainingBalance})`);
 }
-
+//Day-5
+function calculateTotal(rent, food, transport, other){
+    return rent+food+transport+other;
+}
 
 
