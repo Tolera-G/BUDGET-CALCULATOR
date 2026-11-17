@@ -9,7 +9,7 @@ function calculateTotal(rent, food, transport, other){
     return rent+food+transport+other;
 }
 function calculateBalance (income, total){
-    return incomencome-total;
+    return income-total;
 }
 function getStatus(balance) {
   if (balance > 0) {
@@ -33,7 +33,7 @@ other1.trim()  === "" || Number.isNaN(Number(other1))||Number(other1) < 0
 console.log("please enter a valid number for all fields")
 }else{
 
-const monthlyIncome= Number(income1);
+const income= Number(income1);
 const rent=Number(rent1);
 const food=Number(food1);
 const transport=Number(transport1);
