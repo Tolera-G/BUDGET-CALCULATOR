@@ -4,6 +4,22 @@ const food1="1200";
 const transport1="400";
 const other1="300";
 
+//functions
+function calculateTotal(rent, food, transport, other){
+    return rent+food+transport+other;
+}
+function calculateBalance (income, total){
+    return incomencome-total;
+}
+function getStatus(balance) {
+  if (balance > 0) {
+    return "Within budget";
+  } else if (balance === 0) {
+    return "Budget fully used";
+  } else {
+    return "Over budget";
+  }
+}
 //Validation
 if (
 income1.trim() === "" || Number.isNaN(Number(income1)) ||Number(income1) < 0||
@@ -23,37 +39,19 @@ const food=Number(food1);
 const transport=Number(transport1);
 const other=Number(other1);
 
-//Day-5
-function calculateTotal(rent, food, transport, other){
-    return rent+food+transport+other;
-}
-function calculateBalance (monthlyIncome, total){
-    return monthlyIncome-total;
-}
-function getStatus(balance){
-    let status="";
-    if (balance>0){
-        status="within budget";
-         return status
-    } else if (balance===0) {
-        status="Budget fully used";
-         return status
-        
-    } else {
-        status="Over budget";
-         return status
-        
-    }
-}
-}
-
-
 const total=calculateTotal();
 const balance=calculateBalance(monthlyIncome, total);
 const status=getStatus(balance);
+
 console.log(`Total Expense is = ${total}`);
 console.log(`Remaining Balance = ${balance}`);
 console.log(`Status= ${status}`);
+}
+
+
+
+
+
 
 
 
