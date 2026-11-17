@@ -32,12 +32,12 @@ function calculateTotal(rent, food, transport, other){
 function calculateBalance (monthlyIncome, totalExpense){
     return totalExpense-monthlyIncome;
 }
-function getStatus(remainingBalance){
+function getStatus(balance){
     let status="";
-    if (remainingBalance>0){
+    if (balance>0){
         status="within budget";
          return status
-    } else if (remainingBalance===0) {
+    } else if (balance===0) {
         status="Budget fully used";
          return status
         
@@ -47,4 +47,7 @@ function getStatus(remainingBalance){
         
     }
 }
+const total=calculateTotal(300, 400, 500, 600);
+const balance=calculateBalance(5000, 2900);
+const status=getStatus(balance);
 
