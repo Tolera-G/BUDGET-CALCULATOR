@@ -23,29 +23,8 @@ const rent=Number(rent1);
 const food=Number(food1);
 const transport=Number(transport1);
 const other=Number(other1);
-
-const totalExpense=rent+food+transport+other;
-const remainingBalance = monthlyIncome-totalExpense;
-
-console.log(`Total expenses = ${totalExpense} (${typeof totalExpense})`);
-console.log(`Remaining balance = ${remainingBalance} (${typeof remainingBalance})`);
-
-//Status
-let status= "";
-if (remainingBalance>0) {
-    status=`Withing budget ${remainingBalance} left`;    
-}else if (remainingBalance===0) {
-    status="Budget fully used (0 left)";
 }
-else{
- status="Over budget";
-}
-   
 
-
-console.log(status);
-
-}
 //Day-5
 function calculateTotal(rent, food, transport, other){
     return rent+food+transport+other;
@@ -57,14 +36,15 @@ function getStatus(remainingBalance){
     let status="";
     if (remainingBalance>0){
         status="within budget";
+         return status
     } else if (remainingBalance===0) {
         status="Budget fully used";
+         return status
         
     } else {
         status="Over budget";
+         return status
         
     }
-    return status
-
 }
 
