@@ -29,8 +29,8 @@ const other=Number(other1);
 function calculateTotal(rent, food, transport, other){
     return rent+food+transport+other;
 }
-function calculateBalance (monthlyIncome, totalExpense){
-    return totalExpense-monthlyIncome;
+function calculateBalance (monthlyIncome, total){
+    return monthlyIncome-total;
 }
 function getStatus(balance){
     let status="";
@@ -48,7 +48,7 @@ function getStatus(balance){
     }
 }
 const total=calculateTotal(300, 400, 500, 600);
-const balance=calculateBalance(5000, 2900);
+const balance=calculateBalance(5000, total);
 const status=getStatus(balance);
 console.log(`Total Expense is = ${total}`);
 console.log(`Remaining Balance = ${balance}`);
