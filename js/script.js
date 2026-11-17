@@ -50,4 +50,9 @@ function getStatus(balance){
 const total=calculateTotal(300, 400, 500, 600);
 const balance=calculateBalance(5000, 2900);
 const status=getStatus(balance);
+console.log(`Total Expense is = ${total}`);
+console.log(`Remaining Balance = ${balance}`);
+console.log(`Status= ${status}`);
+
+
 
