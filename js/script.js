@@ -50,5 +50,8 @@ console.log(status);
 function calculateTotal(rent, food, transport, other){
     return rent+food+transport+other;
 }
+function calculateBalance (monthlyIncome, totalExpense){
+    return totalExpense-monthlyIncome;
+}
 
 
