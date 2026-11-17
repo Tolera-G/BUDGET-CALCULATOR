@@ -10,7 +10,6 @@ income1.trim() === "" || Number.isNaN(Number(income1)) ||Number(income1) < 0||
 rent1.trim()  === "" || Number.isNaN(Number(rent1))||Number(rent1) < 0||
 food1.trim() === "" || Number.isNaN(Number(food1)) ||Number(food1) < 0||
 transport1.trim() === "" || Number.isNaN(Number(transport1))||Number(transport1) < 0||
-income1.trim() === "" || Number.isNaN(Number(income1)) ||Number(income1) < 0||
 other1.trim()  === "" || Number.isNaN(Number(other1))||Number(other1) < 0
 )
 
@@ -23,7 +22,6 @@ const rent=Number(rent1);
 const food=Number(food1);
 const transport=Number(transport1);
 const other=Number(other1);
-}
 
 //Day-5
 function calculateTotal(rent, food, transport, other){
@@ -47,8 +45,11 @@ function getStatus(balance){
         
     }
 }
-const total=calculateTotal(300, 400, 500, 600);
-const balance=calculateBalance(5000, total);
+}
+
+
+const total=calculateTotal();
+const balance=calculateBalance(monthlyIncome, total);
 const status=getStatus(balance);
 console.log(`Total Expense is = ${total}`);
 console.log(`Remaining Balance = ${balance}`);
