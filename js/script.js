@@ -42,8 +42,8 @@ const food=Number(food1);
 const transport=Number(transport1);
 const other=Number(other1);
 
-const total=calculateTotal();
-const balance=calculateBalance(monthlyIncome, total);
+const total=calculateTotal(rent, food, transport, other);
+const balance=calculateBalance(income, total);
 const status=getStatus(balance);
 
 console.log(`Total Expense is = ${total}`);
