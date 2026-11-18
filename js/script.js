@@ -25,11 +25,11 @@ function getStatus(balance) {
 }
 //Validation
 if(
-  isIvalid(income1) ||
-  isIvalid(rent1) ||
-  isIvalid(food1) ||
-  isIvalid(transport1) ||
-  isIvalid(other1)
+  isInvalid(income1) ||
+  isInvalid(rent1) ||
+  isInvalid(food1) ||
+  isInvalid(transport1) ||
+  isInvalid(other1)
 )
 
 {
