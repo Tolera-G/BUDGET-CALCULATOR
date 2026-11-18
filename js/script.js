@@ -5,6 +5,9 @@ const transport1="400";
 const other1="300";
 
 //functions
+function isInvalid(value){
+  return value.trim() === "" || Number.isNaN(Number(value)) || Number(value) < 0;
+}
 function calculateTotal(rent, food, transport, other){
     return rent+food+transport+other;
 }
@@ -21,12 +24,12 @@ function getStatus(balance) {
   }
 }
 //Validation
-if (
-income1.trim() === "" || Number.isNaN(Number(income1)) ||Number(income1) < 0||
-rent1.trim()  === "" || Number.isNaN(Number(rent1))||Number(rent1) < 0||
-food1.trim() === "" || Number.isNaN(Number(food1)) ||Number(food1) < 0||
-transport1.trim() === "" || Number.isNaN(Number(transport1))||Number(transport1) < 0||
-other1.trim()  === "" || Number.isNaN(Number(other1))||Number(other1) < 0
+if(
+  isIvalid(income1) ||
+  isIvalid(rent1) ||
+  isIvalid(food1) ||
+  isIvalid(transport1) ||
+  isIvalid(other1)
 )
 
 {
