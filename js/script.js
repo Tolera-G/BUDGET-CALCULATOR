@@ -1,8 +1,4 @@
-const income1="5000";
-const rent1="1500";
-const food1="1200";
-const transport1="400";
-const other1="300";
+
 
 //functions
 function isInvalid(value){
@@ -46,9 +42,17 @@ const total=calculateTotal(rent, food, transport, other);
 const balance=calculateBalance(income, total);
 const status=getStatus(balance);
 
-console.log(`Total Expense is = ${total}`);
-console.log(`Remaining Balance = ${balance}`);
-console.log(`Status= ${status}`);
+const incomeInput= document.getElementById("income");
+const rentInput= document.getElementById("rent");
+const transportInput= document.getElementById("transport");
+const foodInput= document.getElementById("food");
+const otherInput= document.getElementById("other");
+const calculate_btnInput= document.getElementById("calculate-btn");
+const messageInput= document.getElementById("message");
+const total_Expensesnput= document.getElementById("total-expenses");
+const remaining_balanceInput= document.getElementById("remaining-balance");
+const statusInput= document.getElementById("status");
+
 }
 
 
