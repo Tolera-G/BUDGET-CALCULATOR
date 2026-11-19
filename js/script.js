@@ -1,5 +1,14 @@
 
-
+const incomeInput= document.getElementById("income");
+const rentInput= document.getElementById("rent");
+const transportInput= document.getElementById("transport");
+const foodInput= document.getElementById("food");
+const otherInput= document.getElementById("other");
+const calculate_btnInput= document.getElementById("calculate-btn");
+const messageInput= document.getElementById("message");
+const total_Expensesnput= document.getElementById("total-expenses");
+const remaining_balanceInput= document.getElementById("remaining-balance");
+const statusInput= document.getElementById("status");
 //functions
 function isInvalid(value){
   return value.trim() === "" || Number.isNaN(Number(value)) || Number(value) < 0;
@@ -18,6 +27,13 @@ function getStatus(balance) {
   } else {
     return "Over budget";
   }
+}
+function readInputValues() {
+  const income1 = incomeInput.value;
+  const rent1 = rentInput.value;
+  const food1 = foodInput.value;
+  const transport1 = transportInput.value;
+  const other1 = otherInput.value;
 }
 //Validation
 if(
@@ -42,16 +58,9 @@ const total=calculateTotal(rent, food, transport, other);
 const balance=calculateBalance(income, total);
 const status=getStatus(balance);
 
-const incomeInput= document.getElementById("income");
-const rentInput= document.getElementById("rent");
-const transportInput= document.getElementById("transport");
-const foodInput= document.getElementById("food");
-const otherInput= document.getElementById("other");
-const calculate_btnInput= document.getElementById("calculate-btn");
-const messageInput= document.getElementById("message");
-const total_Expensesnput= document.getElementById("total-expenses");
-const remaining_balanceInput= document.getElementById("remaining-balance");
-const statusInput= document.getElementById("status");
+
+
+console.log(incomeInput);
 
 }
 
