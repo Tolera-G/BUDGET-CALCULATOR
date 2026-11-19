@@ -28,12 +28,55 @@ function getStatus(balance) {
     return "Over budget";
   }
 }
-function readInputValues() {
+function readAmount() {
   const income1 = incomeInput.value;
   const rent1 = rentInput.value;
   const food1 = foodInput.value;
   const transport1 = transportInput.value;
   const other1 = otherInput.value;
+}
+
+function handleCalculate() {
+  const income = readAmount(incomeInput);
+  const rent = readAmount(rentInput);
+  const food = readAmount(foodInput);
+  const transport = readAmount(transportInput);
+  const other = readAmount(otherInput);
+
+  if (
+    Number.isNaN(income) ||
+    Number.isNaN(rent) ||
+    Number.isNaN(food) ||
+    Number.isNaN(transport) ||
+    Number.isNaN(other)
+  ) {
+    messageEl.textContent = "Please enter valid numbers in all fields.";
+    totalExpensesEl.textContent = "-";
+    remainingBalanceEl.textContent = "-";
+    statusEl.textContent = "-";
+    statusEl.classList.remove("within", "exact", "over");
+    return;
+  }
+
+  messageEl.textContent = "";
+
+  const totalExpenses = calculateTotal(rent, food, transport, other);
+  const remainingBalance = calculateBalance(income, totalExpenses);
+  const statusText = getStatus(remainingBalance);
+
+  totalExpensesEl.textContent = totalExpenses;
+  remainingBalanceEl.textContent = remainingBalance;
+  statusEl.textContent = statusText;
+
+  statusEl.classList.remove("within", "exact", "over");
+
+  if (statusText === "Within budget") {
+    statusEl.classList.add("within");
+  } else if (statusText === "Budget fully used") {
+    statusEl.classList.add("exact");
+  } else if (statusText === "Over budget") {
+    statusEl.classList.add("over");
+  }
 }
 //Validation
 if(
