@@ -101,12 +101,9 @@ const total=calculateTotal(rent, food, transport, other);
 const balance=calculateBalance(income, total);
 const status=getStatus(balance);
 
-
-
-console.log(incomeInput);
-
 }
-
+// 5. EVENT LISTENER
+calculateBtn.addEventListener("click", handleCalculate);
 
 
 
