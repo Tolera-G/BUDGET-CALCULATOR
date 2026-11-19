@@ -1,24 +1,24 @@
+// 1. DOM ELEMENTS
+const incomeInput = document.getElementById("income");
+const rentInput = document.getElementById("rent");
+const foodInput = document.getElementById("food");
+const transportInput = document.getElementById("transport");
+const otherInput = document.getElementById("other");
+const calculateBtn = document.getElementById("calculate-btn");
+const messageEl = document.getElementById("message");
+const totalExpensesEl = document.getElementById("total-expenses");
+const remainingBalanceEl = document.getElementById("remaining-balance");
+const statusEl = document.getElementById("status");
 
-const incomeInput= document.getElementById("income");
-const rentInput= document.getElementById("rent");
-const transportInput= document.getElementById("transport");
-const foodInput= document.getElementById("food");
-const otherInput= document.getElementById("other");
-const calculate_btnInput= document.getElementById("calculate-btn");
-const messageInput= document.getElementById("message");
-const total_Expensesnput= document.getElementById("total-expenses");
-const remaining_balanceInput= document.getElementById("remaining-balance");
-const statusInput= document.getElementById("status");
-//functions
-function isInvalid(value){
-  return value.trim() === "" || Number.isNaN(Number(value)) || Number(value) < 0;
+// 2. LOGIC FUNCTIONS
+function calculateTotal(rent, food, transport, other) {
+  return rent + food + transport + other;
 }
-function calculateTotal(rent, food, transport, other){
-    return rent+food+transport+other;
+
+function calculateBalance(income, total) {
+  return income - total;
 }
-function calculateBalance (income, total){
-    return income-total;
-}
+
 function getStatus(balance) {
   if (balance > 0) {
     return "Within budget";
@@ -28,14 +28,21 @@ function getStatus(balance) {
     return "Over budget";
   }
 }
-function readAmount() {
-  const income1 = incomeInput.value;
-  const rent1 = rentInput.value;
-  const food1 = foodInput.value;
-  const transport1 = transportInput.value;
-  const other1 = otherInput.value;
+
+// 3. HELPER FUNCTIONS
+function isInvalid(text) {
+  return text.trim() === "" || Number.isNaN(Number(text)) || Number(text) < 0;
 }
 
+function readAmount(inputElement) {
+  const text = inputElement.value;
+  if (isInvalid(text)) {
+    return NaN;
+  }
+  return Number(text);
+}
+
+// 4. MAIN HANDLER
 function handleCalculate() {
   const income = readAmount(incomeInput);
   const rent = readAmount(rentInput);
@@ -74,40 +81,10 @@ function handleCalculate() {
     statusEl.classList.add("within");
   } else if (statusText === "Budget fully used") {
     statusEl.classList.add("exact");
-  } else if (statusText === "Over budget") {
+  } else {
     statusEl.classList.add("over");
   }
 }
-//Validation
-if(
-  isInvalid(income1) ||
-  isInvalid(rent1) ||
-  isInvalid(food1) ||
-  isInvalid(transport1) ||
-  isInvalid(other1)
-)
 
-{
-console.log("please enter a valid number for all fields")
-}else{
-
-const income= Number(income1);
-const rent=Number(rent1);
-const food=Number(food1);
-const transport=Number(transport1);
-const other=Number(other1);
-
-const total=calculateTotal(rent, food, transport, other);
-const balance=calculateBalance(income, total);
-const status=getStatus(balance);
-
-}
 // 5. EVENT LISTENER
 calculateBtn.addEventListener("click", handleCalculate);
-
-
-
-
-
-
-
